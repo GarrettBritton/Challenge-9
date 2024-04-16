@@ -53,8 +53,8 @@ const questions = inquirer
 ])
 // TODO: Create a function to write README file
 .then((response) =>
-fs.writeFile('README.md',(`# ${response.Title} ## Description: ${response.Description} ## Table of Contents: ${response.Contents}
-        ## Installation: ${response.Installation} ## Usage: ${response.Usage} ## License: ${response.License} ## Contributing: ${response.Contributing} ## Tests: ${response.Tests} ## Questions: ${response.Questions}`),(err) =>
+fs.writeFile('README.md',(`#${response.Title} \n## Description: \n${response.Description} \n## Table of Contents: \n${response.Contents}
+## Installation: \n${response.Installation} \n## Usage: \n${response.Usage} \n## License: \n${response.License} \n## Contributing: \n${response.Contributing} \n## Tests: \n${response.Tests} \n ## Questions: \n${response.Questions}`),(err) =>
 err ? console.error(err) : console.log('Success!')
 ));
 
