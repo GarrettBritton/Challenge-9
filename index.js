@@ -47,14 +47,19 @@ const questions = inquirer
 },
 {
     type: "input",
-    message: ("Please enter any questions you have here"),
-    name: "Questions",
+    message: ("Please enter your GitHub ursername"),
+    name: "Github",
+},
+{
+    type: "input",
+    message: ("Please enter your email address"),
+    name: "Email",
 },
 ])
 // TODO: Create a function to write README file
 .then((response) =>
 fs.writeFile('README.md',(`# ${response.Title} \n## Description: \n${response.Description} \n## Table of Contents: \n${response.Contents}
-## Installation: \n${response.Installation} \n## Usage: \n${response.Usage} \n## License: \n${response.License} \n## Contributing: \n${response.Contributing} \n## Tests: \n${response.Tests} \n ## Questions: \n${response.Questions}`),(err) =>
+## Installation: \n${response.Installation} \n## Usage: \n${response.Usage} \n## License: \n${response.License} \n## Contributing: \n${response.Contributing} \n## Tests: \n${response.Tests} \n## Questions: \nYou can access my github here: https://github.com/${response.Github} for any additional questions or email me at ${response.Email}`),(err) =>
 err ? console.error(err) : console.log('Success!')
 ));
 
